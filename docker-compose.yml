@@ -1,0 +1,8 @@
+version: "3"
+services:
+  users-service:
+    build:
+      context: .
+      dockerfile: microservices/users-service/Dockerfile
+    ports:
+      - "50051:50051"

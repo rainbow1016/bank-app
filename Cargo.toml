@@ -1,0 +1,11 @@
+[workspace]
+
+members = [
+    "backend",
+    "microservices/*"
+]
+
+exclude = [
+    "frontend",
+    "proto"
+]
