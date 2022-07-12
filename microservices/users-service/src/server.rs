@@ -1,4 +1,5 @@
 use tonic::{transport::Server, Request, Response, Status};
+use log::{info};
 
 use user::user_server::{User, UserServer};
 use user::{UserRequest, UserResponse};
@@ -31,7 +32,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "0.0.0.0:50051".parse()?;
     let user_service = UserService::default();
     
-
+    info!("Starting Users-service");
     Server::builder()
         .add_service(UserServer::new(user_service))
         .serve(addr)

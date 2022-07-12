@@ -5,4 +5,13 @@ services:
       context: .
       dockerfile: microservices/users-service/Dockerfile
     ports:
-      - "50051:50051"
+      - 50051:50051
+
+  database:
+    build:
+      context: .
+      dockerfile: database/Dockerfile
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
