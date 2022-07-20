@@ -1,6 +1,6 @@
-use tide::Request;
+use log::info;
 use tide::prelude::*;
-use log::{info};
+use tide::Request;
 
 #[derive(Debug, Deserialize)]
 struct Animal {
@@ -18,5 +18,9 @@ async fn main() -> tide::Result<()> {
 }
 
 async fn order_shoes(mut req: Request<()>) -> tide::Result {
-    Ok(format!("Hello, {}! I've put in an order for {} shoes", "name", "legs").into())
+    Ok(format!(
+        "Hello, {}! I've put in an order for {} shoes",
+        "name", "legs"
+    )
+    .into())
 }

@@ -1,0 +1,17 @@
+name: Rust
+
+on:
+  pull_request:
+
+jobs:
+  # Format checking
+
+  # Lint checking
+
+  # Run and report on tests
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo test --verbose
