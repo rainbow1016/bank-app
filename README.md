@@ -23,11 +23,12 @@ This application is built to demostrate a microservice architecture
   - [x] Determine backend framework
   - [ ] Design api routes for frontend
   - [ ] Establish connections to microservices
+  - [x] Dockerized
 - [ ] Database
   - [ ] Data model
   - [x] Figure out how to seed data
   - [x] Dockerized
-  - [ ] Others services can connect
+  - [x] Others services can connect
 - [ ] Users service
   - [ ] Protobufs
   - [ ] Server
@@ -59,6 +60,7 @@ This application is built to demostrate a microservice architecture
   - [ ] Full architecture diagram
   - [ ] Results and learnings
   - [ ] Create scaffolding for creating other grpc services
+  - [x] Networking for multiple containers to communicate
 
 ## How to build and run
 

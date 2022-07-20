@@ -14,10 +14,14 @@ RUN cargo install cargo-chef
 COPY --from=plan /app/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN cargo build --release --bin users-service
+RUN cargo build --release
 
 # Build small image
-FROM gcr.io/distroless/cc-debian11
-COPY --from=cache /app/target/release/users-service /app/users-service
+# FROM gcr.io/distroless/cc-debian11
+# COPY --from=busybox:1.35.0-uclibc /bin/sh /bin/sh
+# COPY --from=cache /app/target/release/backend /app/backend
+# WORKDIR /app
+FROM rust
 WORKDIR /app
-CMD ["./users-service"]
+COPY --from=cache /app/target/release/backend /app/backend
+CMD ["./backend"]

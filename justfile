@@ -1,8 +1,7 @@
-up:
-    docker compose up -d
+up: docker compose up -d
 
-down:
-    docker compose down --remove-orphans
+down: docker compose down --remove-orphans
 
-build:
-    docker compose build
+build: docker compose build
+
+b-s SERVICE: docker compose build {{ SERVICE }}

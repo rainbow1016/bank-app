@@ -1,6 +1,6 @@
-CREATE TABLE IF NOT EXISTS test (
-    id int,
-    name varchar
+CREATE TABLE IF NOT EXISTS users (
+    id serial primary key not null,
+    name varchar not null
 );
 
-INSERT INTO test (id, name) VALUES (1, 'test name');
+INSERT INTO users (name) VALUES ('test user 1');

@@ -1,0 +1,29 @@
+{
+  "db": "PostgreSQL",
+  "288b4a1fbe30fbfcc8c1bb1aac8f73686d59a1562905f5b73a19507c3e038eec": {
+    "describe": {
+      "columns": [
+        {
+          "name": "user_id!",
+          "ordinal": 0,
+          "type_info": "Varchar"
+        },
+        {
+          "name": "username",
+          "ordinal": 1,
+          "type_info": "Varchar"
+        }
+      ],
+      "nullable": [
+        null,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Int4"
+        ]
+      }
+    },
+    "query": "\n            SELECT cast(id as varchar) as \"user_id!\", name as username\n            FROM users\n            WHERE id = $1\n            "
+  }
+}
