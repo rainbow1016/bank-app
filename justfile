@@ -1,3 +1,6 @@
+alias b:= build
+alias d:= down
+
 up: 
     docker compose up -d
 
@@ -21,4 +24,4 @@ fmt:
 
 pre-commit: lint fmt
 
-pre-push: nextest
+pre-push: test

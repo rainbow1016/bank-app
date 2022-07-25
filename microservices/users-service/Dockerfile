@@ -20,4 +20,5 @@ RUN cargo build --release --bin users-service
 FROM gcr.io/distroless/cc-debian11
 COPY --from=cache /app/target/release/users-service /app/users-service
 WORKDIR /app
+ENV RUST_LOG=users-service
 CMD ["./users-service"]
