@@ -3,15 +3,19 @@ name: Rust
 on:
   pull_request:
 
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
-  # Format checking
-
-  # Lint checking
-
-  # Run and report on tests
-  test:
-    name: Test
+  checks:
+    name: All Checks
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      - run: cargo test --verbose
+      - name: Format
+        run: just fmt
+      - name: Lint
+        run: just lint
+      - name: Test
+        run: just test

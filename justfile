@@ -13,8 +13,12 @@ b-s SERVICE:
 lint: 
     cargo clippy -- -D clippy::all
 
-nextest: 
+test: 
     cargo nextest run -v
 
 fmt:
     cargo ftm --all -- --check
+
+pre-commit: lint fmt
+
+pre-push: nextest
