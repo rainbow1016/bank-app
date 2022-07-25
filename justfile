@@ -21,4 +21,4 @@ fmt:
 
 pre-commit: lint fmt
 
-pre-push: nextest
+pre-push: test
