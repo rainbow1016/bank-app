@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: "*"
       - name: Format
         run: just fmt
       - name: Lint
