@@ -61,6 +61,8 @@ This application is built to demostrate a microservice architecture
   - [ ] Results and learnings
   - [ ] Create scaffolding for creating other grpc services
   - [x] Networking for multiple containers to communicate
+  - [ ] Implement CI
+  - [ ] Learn/setup git hooks
 
 ## How to build and run
 
