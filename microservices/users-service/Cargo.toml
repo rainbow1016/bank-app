@@ -7,10 +7,6 @@ edition = "2021"
 name = "users-service"
 path = "src/server.rs"
 
-[[bin]]
-name = "users-client"
-path = "src/client.rs"
-
 [dependencies]
 tonic = "0.7"
 prost = "0.10"
