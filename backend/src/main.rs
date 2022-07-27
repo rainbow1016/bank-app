@@ -10,14 +10,9 @@ async fn main() -> tide::Result<()> {
     env_logger::init();
     info!("Starting Tide Server");
     let mut app = tide::new();
-    app.at("/hello-world").get(hello_world);
     app.at("/user/:id").get(get_user);
     app.listen("0.0.0.0:8080").await?;
     Ok(())
-}
-
-async fn hello_world(mut _req: Request<()>) -> tide::Result {
-    Ok(format!("Hello World!").into())
 }
 
 async fn get_user(req: Request<()>) -> tide::Result {
