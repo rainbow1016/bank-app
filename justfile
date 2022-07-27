@@ -20,7 +20,7 @@ test:
     cargo nextest run -v
 
 fmt:
-    cargo ftm --all -- --check
+    cargo fmt --all -- --check
 
 pre-commit: lint fmt
 
