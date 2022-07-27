@@ -7,6 +7,7 @@ use users::UserRequest;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
+    env_logger::init();
     info!("Starting Tide Server");
     let mut app = tide::new();
     app.at("/hello-world").get(hello_world);

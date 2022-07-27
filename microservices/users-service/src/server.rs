@@ -65,6 +65,7 @@ async fn get_pool() -> Result<Pool<Postgres>, sqlx::Error> {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    env_logger::init();
     let addr = "0.0.0.0:50051".parse()?;
     let user_service = UserService::default();
 
