@@ -5,10 +5,12 @@ This application is built to demostrate a microservice architecture
 ## Design
 
 - Frontend
-  - Todo
+  - React
+  - NextJs
+  - Vite
 - Backend
   - Rust
-  - tide, serde, (tonic, prost, tokio for creating grpc client)
+  - tide, serde, (tonic, prost, async-std)
 - Microservices
   - Rust
   - tokio, tonic, prost, sqlx

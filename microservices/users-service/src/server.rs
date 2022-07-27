@@ -35,6 +35,8 @@ impl User for UserService {
     ) -> Result<Response<UserResponse>, Status> {
         let req = request.into_inner();
         let user_id: i32 = req.user_id.parse::<i32>().unwrap();
+
+        info!("Retrieving user with id: {:?}", &user_id);
         let pool = get_pool().await.unwrap();
         let result = sqlx::query_as!(
             UserResponse,
@@ -54,14 +56,16 @@ impl User for UserService {
 }
 
 async fn get_pool() -> Result<Pool<Postgres>, sqlx::Error> {
-    Ok(PgPoolOptions::new()
+    info!("Creating connection pool to database");
+    PgPoolOptions::new()
         .max_connections(5)
         .connect("postgres://postgres:password@database:5432/bank")
-        .await?)
+        .await
 }
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    env_logger::init();
     let addr = "0.0.0.0:50051".parse()?;
     let user_service = UserService::default();
 

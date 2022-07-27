@@ -17,11 +17,8 @@ COPY . .
 RUN cargo build --release
 
 # Build small image
-# FROM gcr.io/distroless/cc-debian11
-# COPY --from=busybox:1.35.0-uclibc /bin/sh /bin/sh
-# COPY --from=cache /app/target/release/backend /app/backend
-# WORKDIR /app
-FROM rust
-WORKDIR /app
+FROM gcr.io/distroless/cc-debian11
 COPY --from=cache /app/target/release/backend /app/backend
+WORKDIR /app
+ENV RUST_LOG=backend
 CMD ["./backend"]

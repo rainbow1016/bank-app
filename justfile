@@ -1,3 +1,6 @@
+alias b:= build
+alias d:= down
+
 up: 
     docker compose up -d
 
@@ -18,6 +21,9 @@ test:
 
 fmt:
     cargo fmt --all -- --check
+
+ci-install:
+    cargo install cargo-nextest
 
 pre-commit: lint fmt
 

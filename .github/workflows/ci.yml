@@ -16,6 +16,8 @@ jobs:
       - uses: extractions/setup-just@v1
         with:
           just-version: "*"
+      - name: Setup 
+        run: just ci-install
       - name: Format
         run: just fmt
       - name: Lint
