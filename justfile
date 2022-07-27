@@ -22,6 +22,9 @@ test:
 fmt:
     cargo fmt --all -- --check
 
+ci-install:
+    cargo install cargo-nextest
+
 pre-commit: lint fmt
 
 pre-push: test
